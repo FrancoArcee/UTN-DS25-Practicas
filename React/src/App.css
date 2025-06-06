@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  font-family: sans-serif;
+  height: 100%;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr 60px;
+  grid-template-areas:
+    "header header"
+    "menu main"
+    "footer footer";
+  height: 100vh;
+}
+
+.header { 
+  grid-area: header; 
+}
+.main { 
+  grid-area: main; 
+  overflow-y: auto; 
+}
+.menu { 
+  grid-area: menu; 
+}
+.footer { 
+  grid-area: footer; 
+}
