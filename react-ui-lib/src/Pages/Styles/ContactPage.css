@@ -1,0 +1,32 @@
+.contact-page {
+  padding: 20px 0;
+}
+
+.contact-info {
+  background-color: #89bb7b;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.contact-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.contact-item svg {
+  color: #117262;
+  margin-top: 5px;
+}
+
+.contact-form {
+  background-color: #89bb7b;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.msg {
+  text-align: center;
+}

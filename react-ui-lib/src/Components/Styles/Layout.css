@@ -1,0 +1,13 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-container {
+  flex: 1;
+}
+
+.content-container {
+  background-color: #b5f3a3;
+}

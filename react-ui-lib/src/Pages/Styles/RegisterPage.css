@@ -1,0 +1,10 @@
+.register-page {
+  padding: 20px 0;
+}
+
+.registration-form {
+  background-color: #89bb7b;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

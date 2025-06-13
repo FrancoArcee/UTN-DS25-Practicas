@@ -1,0 +1,34 @@
+.header-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../../assets/Branding/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #e3f8dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+.logo-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.3rem;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-box img {
+  height: 70px;
+  width: 70px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.header-title {
+  font-family: 'Georgia', serif;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
