@@ -4,12 +4,13 @@
 
 .section-page h2 {
   font-size: 2.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-weight: 800;
 }
 
 .book-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
 .book-card:hover {
@@ -21,4 +22,18 @@
   height: 250px;
   object-fit: cover;
   object-position: top;
+}
+
+/* Asegurar que las cards se vean bien con muchos libros */
+@media (min-width: 992px) {
+  .book-card {
+    min-height: 400px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 767px) {
+  .book-card img {
+    height: 200px;
+  }
 }

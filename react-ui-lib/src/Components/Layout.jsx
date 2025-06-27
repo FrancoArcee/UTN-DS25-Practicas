@@ -4,7 +4,7 @@ import SideBar from "./SideBar"
 import Footer from "./Footer"
 import "./Styles/Layout.css"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, catalogo }) => {
   return (
     <div className="layout">
       <Header />
