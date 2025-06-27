@@ -25,7 +25,6 @@ const BookCard = ({
           )}
         </Card.Title>
         <Card.Subtitle className="mb-2 text-muted">{titleAsLink ? libro.titulo : `Por ${libro.autor}`}</Card.Subtitle>
-        {!titleAsLink && <Card.Text>Por {libro.autor}</Card.Text>}
         {libro.descripcion && <Card.Text>{libro.descripcion}</Card.Text>}
         {showCategory && libro.tema && (
           <small className="text-muted">Categoría: {libro.tema.charAt(0).toUpperCase() + libro.tema.slice(1)}</small>
