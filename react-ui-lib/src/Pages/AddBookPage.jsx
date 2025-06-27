@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Container, Form, Button, Row, Col, Alert } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
@@ -34,7 +32,7 @@ const AddBookPage = ({ onAgregarLibro }) => {
     onAgregarLibro(nuevoLibro)
     setMostrarAlerta(true)
 
-    // Limpiar formulario
+    // Esto limpia el  formulario
     setFormData({
       titulo: "",
       autor: "",
@@ -42,17 +40,17 @@ const AddBookPage = ({ onAgregarLibro }) => {
       tema: "",
     })
 
-    // Ocultar alerta después de 3 segundos y redirigir
+    // Esto oculta la alerta después de tres segundos y me redirige
     setTimeout(() => {
       setMostrarAlerta(false)
-      navigate(`/section/${formData.tema}`) // Redirigir a la sección del libro agregado
+      navigate(`/section/${formData.tema}`) // Redirige a la sección del libro agregado
     }, 2000)
   }
 
   return (
     <Container className="add-book-page">
       <h2 className="text-center my-4">Agregar Nuevo Libro</h2>
-      <p className="text-center mb-4">Completa el formulario para agregar un libro al catálogo</p>
+      <p className="text-center mb-4">Completá el formulario para agregar un libro al catálogo</p>
 
       {mostrarAlerta && (
         <Alert variant="success" className="text-center">

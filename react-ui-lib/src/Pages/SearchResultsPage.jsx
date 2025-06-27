@@ -1,8 +1,7 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
-import { Container, Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
+import BookCard from "../Components/BookCard"
 import "./Styles/SearchResultsPage.css"
 
 const SearchResultsPage = ({ catalogo }) => {
@@ -36,17 +35,10 @@ const SearchResultsPage = ({ catalogo }) => {
           <Row>
             {resultados.map((libro) => (
               <Col md={6} lg={4} key={libro.id} className="mb-4">
-                <Card className="h-100 book-card">
-                  <Card.Img variant="top" src={libro.imagen} alt={libro.titulo} />
-                  <Card.Body>
-                    <Card.Title>{libro.titulo}</Card.Title>
-                    <Card.Subtitle className="mb-2 text-muted">Por {libro.autor}</Card.Subtitle>
-                    <Card.Text>{libro.descripcion}</Card.Text>
-                    <small className="text-muted">
-                      Categoría: {libro.tema.charAt(0).toUpperCase() + libro.tema.slice(1)}
-                    </small>
-                  </Card.Body>
-                </Card>
+                <BookCard 
+                  libro={libro} 
+                  showCategory={true}
+                />
               </Col>
             ))}
           </Row>
@@ -56,8 +48,6 @@ const SearchResultsPage = ({ catalogo }) => {
           <h4 className="text-center">No se encontraron libros</h4>
           <p className="text-center text-muted">
             No hay libros que coincidan con tu búsqueda "{terminoBusqueda}".
-            <br />
-            Intenta con otros términos de búsqueda.
           </p>
         </div>
       )}

@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Layout from "./Components/Layout"
@@ -13,11 +11,10 @@ import { librosPorTema } from "./Data/LibrosPorTema"
 import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
-  // Aprovecho los datos del archivo librosPorTema para obtener todo el catálogo
+  // Aprovecho los datos del archivo librosPorTema para obtener todo el catálogo inicial
   const crearCatalogoCompleto = () => {
     const catalogo = []
     let id = 1
-
     Object.keys(librosPorTema).forEach((tema) => {
       librosPorTema[tema].forEach((libro) => {
         catalogo.push({
@@ -27,7 +24,6 @@ function App() {
         })
       })
     })
-
     return catalogo
   }
 

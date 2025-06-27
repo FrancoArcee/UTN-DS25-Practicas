@@ -3,7 +3,6 @@ import "./Styles/RegisterPage.css"
 
 const RegisterPage = () => {
 
-
   return (
     <Container className="register-page">
       <h2 className="text-center my-4">Registración</h2>

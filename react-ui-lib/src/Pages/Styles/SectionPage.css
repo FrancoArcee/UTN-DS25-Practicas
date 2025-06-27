@@ -7,33 +7,3 @@
   margin-bottom: 10px;
   font-weight: 800;
 }
-
-.book-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 100%;
-}
-
-.book-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-.book-card img {
-  height: 250px;
-  object-fit: cover;
-  object-position: top;
-}
-
-/* Asegurar que las cards se vean bien con muchos libros */
-@media (min-width: 992px) {
-  .book-card {
-    min-height: 400px;
-  }
-}
-
-/* Responsive para móviles */
-@media (max-width: 767px) {
-  .book-card img {
-    height: 200px;
-  }
-}
