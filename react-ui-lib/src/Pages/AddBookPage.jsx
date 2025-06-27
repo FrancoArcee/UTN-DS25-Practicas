@@ -54,7 +54,7 @@ const AddBookPage = ({ onAgregarLibro }) => {
 
       {mostrarAlerta && (
         <Alert variant="success" className="text-center">
-          ¡Libro "{formData.titulo}" agregado exitosamente a la sección de {formData.tema}! Redirigiendo...
+          ¡Libro agregado exitosamente a la sección de {formData.tema}! Redirigiendo...
         </Alert>
       )}
 
