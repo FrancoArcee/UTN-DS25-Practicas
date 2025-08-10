@@ -11,7 +11,7 @@ let books: Book[] = [
   { id: 7, title: "Sapiens", author: "Yuval Noah Harari", price: 2100, createdAt: new Date() },
   { id: 8, title: "Guns, Germs, and Steel", author: "Jared Diamond", price: 2000, createdAt: new Date() },
   { id: 9, title: "Breve historia del tiempo", author: "Stephen Hawking", price: 1900, createdAt: new Date() },
-  { id: 10, title: "El diario de Ana Frank", author: "Ana Frank", price: 1700, createdAt: new Date() },
+  { id: 10, title: "El diario wde Ana Frank", author: "Ana Frank", price: 1700, createdAt: new Date() },
   { id: 11, title: "La Segunda Guerra Mundial", author: "Antony Beevor", price: 2600, createdAt: new Date() },
   { id: 12, title: "La historia interminable", author: "Michael Ende", price: 2000, createdAt: new Date() },
 
@@ -38,7 +38,7 @@ export async function getAllBooks(): Promise<Book[]> {
 export async function getBookById(id: number): Promise<Book> {
   const book = books.find(b => b.id === id);
   if (!book) {
-    const error = new Error('Book not found');
+    const error = new Error('Libro no encontrado');
     (error as any).statusCode = 404;
     throw error;
   }

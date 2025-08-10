@@ -1,45 +1,59 @@
-import { Container, Row, Col } from "react-bootstrap"
-import BookCard from "../Components/BookCard"
-import "./Styles/PrincipalPage.css"
+import { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import BookCard from "../Components/BookCard";
+import "./Styles/PrincipalPage.css";
 
-const PrincipalPage = ({ catalogo }) => {
-  // Agarro un libro de cada tema del catálogo
-  const obtenerLibrosDestacados = () => {
-    const temas = ["ficcion", "historia", "arte", "ciencia"]
-    const librosDestacados = []
-    temas.forEach((tema) => {
-      const librosDelTema = catalogo.filter((libro) => libro.tema === tema)
-      if (librosDelTema.length > 0) {
-        librosDestacados.push({
-          tema,
-          libro: librosDelTema[0], // Agarro el primer libro de cada tema
-        })
-      }
-    })
-    return librosDestacados
+const PrincipalPage = () => {
+  const [libros, setLibros] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/books")
+      .then(res => res.json())
+      .then(json => {
+
+        const arrayLibros = Array.isArray(json.books) ? json.books : [];
+
+        const catalogo = arrayLibros.map(libro => ({
+          id: libro.id,
+          titulo: libro.title,
+          autor: libro.author,
+          precio: libro.price,
+          fecha: new Date(libro.createdAt).toLocaleDateString(),
+          imagen: "https://via.placeholder.com/150"
+        }));
+
+
+        setLibros(catalogo);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error al traer libros:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <Container className="principal-page">
+        <h1 className="text-center my-4">Libros</h1>
+        <p className="text-center">Cargando...</p>
+      </Container>
+    );
   }
-
-  const librosDestacados = obtenerLibrosDestacados()
 
   return (
     <Container className="principal-page">
-      <h1 className="text-center my-4">Libros Destacados</h1>
+      <h1 className="text-center my-4">Libros</h1>
       <Row>
-        {librosDestacados.map((item, index) => (
-          <Col md={6} lg={3} key={index} className="mb-4">
-            <BookCard 
-              libro={item.libro}
-              showFooter={true}
-              footerText="Más libros"
-              footerLink={`/section/${item.tema}`}
-              titleAsLink={true}
-              titleLinkTo={`/section/${item.tema}`}
-            />
+        {libros.map(libro => (
+          <Col md={6} lg={3} key={libro.id} className="mb-4">
+            <BookCard libro={libro} />
           </Col>
         ))}
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default PrincipalPage
+export default PrincipalPage;
