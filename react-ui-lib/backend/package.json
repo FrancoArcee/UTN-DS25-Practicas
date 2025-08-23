@@ -16,8 +16,12 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "@types/babel__core": "^7.20.5",
+    "@types/babel__generator": "^7.27.0",
+    "@types/babel__template": "^7.4.4",
     "@types/express": "^5.0.3",
     "@types/node": "^24.2.0",
+    "@types/warning": "^3.0.3",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
   }
