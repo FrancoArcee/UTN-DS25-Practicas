@@ -14,13 +14,18 @@
   "type": "commonjs",
   "dependencies": {
     "@prisma/client": "^6.16.3",
-    "express": "^5.1.0"
+    "bcrypt": "^6.0.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@types/babel__core": "^7.20.5",
     "@types/babel__generator": "^7.27.0",
     "@types/babel__template": "^7.4.4",
+    "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.2.0",
     "@types/warning": "^3.0.3",
     "prisma": "^6.16.3",
