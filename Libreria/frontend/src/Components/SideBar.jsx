@@ -24,9 +24,6 @@ const SideBar = () => {
         <Nav.Link as={NavLink} to="/add-book" className="sidebar-link">
           Agregar Libro
         </Nav.Link>
-        <Nav.Link as={NavLink} to="/register" className="sidebar-link">
-          Registración
-        </Nav.Link>
         <Nav.Link as={NavLink} to="/contact" className="sidebar-link">
           Contacto
         </Nav.Link>
