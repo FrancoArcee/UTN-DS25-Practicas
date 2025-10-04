@@ -16,7 +16,8 @@ export default function LoginPage() {
     handleSubmit,
     formState: { errors, isSubmitting }
   } = useForm({
-    resolver: yupResolver(loginSchema)
+    resolver: yupResolver(loginSchema),
+    mode: 'onTouched'
   });
 
   const onSubmit = async (data) => {
